@@ -2,7 +2,7 @@
 const mongoose = require('./connection.js')
 
 
-const homework = new mongoose.Schema({
+const Homework = new mongoose.Schema({
  name: String,
 
  time: Date,
@@ -14,4 +14,4 @@ const homework = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('homework', homework);
+module.exports = mongoose.model('Homework', Homework);

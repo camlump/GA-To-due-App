@@ -1,7 +1,7 @@
 const mongoose = require('./connection.js')
 
 
-const deliverables = new mongoose.Schema({
+const Deliverables = new mongoose.Schema({
  name: String,
 
  time: Date,
@@ -13,4 +13,4 @@ const deliverables = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('homework', homework);
+module.exports = mongoose.model('Deliverables', Deliverables);

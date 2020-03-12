@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateModel = require('../models/template.js')
+const Project = require('../models/Project.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,11 @@ const templateModel = require('../models/template.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const projectRouter = express.Router()
+
+
+
+
 
 /* Step 4
  * 
@@ -36,8 +40,34 @@ const templateRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-templateRouter.get('/', (req, res) => {
-  res.json('hello world')
+projectRouter.get('/',(req, res)=>{
+  Project.find().then((Projects)=>{
+    res.json(Projects)
+  });
+});
+
+projectRouter.get('/:projectId',(req, res)=>{
+  Homework.findById(req.params.homeworkId).then((Homework)=>{
+    res.json(Homework)
+  });
+});
+
+projectRouter.post('/',(req,res)=>{
+  Homework.create(req.body).then(()=>{
+    res.status(200).end();
+  })
+})
+
+projectRouter.put('/:projectId', (req, res)=>{
+  Homework.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
+    res.status(200).end();
+  });
+});
+
+projectRouter.delete('/:projectId', (req, res)=>{
+  Project.findByIdAndDelete(req.params.projectId).then(()=>{
+    res.status(200).end();
+  })
 })
 
 /* Step 6
@@ -46,5 +76,5 @@ templateRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  templateRouter
+  projectRouter
 }

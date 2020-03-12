@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const homework = require('../models/homewrok.js')
+const Homework = require('../models/Homework.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,11 @@ const homework = require('../models/homewrok.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const classwork = express.Router()
+const homeworkRouter = express.Router()
+
+
+
+
 
 /* Step 4
  * 
@@ -36,7 +40,35 @@ const classwork = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
+homeworkRouter.get('/',(req, res)=>{
+  Homework.find().then((Homeworks)=>{
+    res.json(Homeworks)
+  });
+});
 
+homeworkRouter.get('/:homeworkId',(req, res)=>{
+  Homework.findById(req.params.homeworkId).then((Hws)=>{
+    res.json(Hws)
+  });
+});
+
+homeworkRouter.post('/',(req,res)=>{
+  Homework.create(req.body).then(()=>{
+    res.status(200).end();
+  })
+})
+
+homeworkRouter.put('/:homeworkId', (req, res)=>{
+  Homework.findByIdAndUpdate(req.params.homeworkId, req.body).then(()=>{
+    res.status(200).end();
+  });
+});
+
+homeworkRouter.delete('/:homeworkId', (req, res)=>{
+  Homework.findByIdAndDelete(req.params.homeworkId).then(()=>{
+    res.status(200).end();
+  })
+})
 
 /* Step 6
  *
@@ -44,5 +76,5 @@ const classwork = express.Router()
  *
  */
 module.exports = {
-  templateRouter
+  homeworkRouter
 }

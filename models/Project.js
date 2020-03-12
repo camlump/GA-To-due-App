@@ -1,7 +1,7 @@
 const mongoose = require('./connection.js')
 
 
-const project = new mongoose.Schema({
+const Project = new mongoose.Schema({
  name: String,
 
  time: Date,
@@ -15,4 +15,4 @@ const project = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('project', project);
+module.exports = mongoose.model('Project', Project);
