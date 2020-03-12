@@ -57,6 +57,7 @@ app.use('/api/homework', homeworkRouter)
 app.use('/api/project', projectRouter)
 app.use('/api/deliverables', deliverableRouter)
 app.use('/api/jobtracker', jobTrackerRouter)
+app.use('/api/meetup', meetupRouter)
 
 
 /* Step 5
