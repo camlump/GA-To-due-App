@@ -19,6 +19,8 @@ const app = express()
 const { homeworkRouter } = require('./controllers/homework.js')
 const { projectRouter } = require('./controllers/project.js')
 const { deliverableRouter } = require('./controllers/deliverables.js')
+const { jobTrackerRouter } = require('./controllers/jobtracker.js')
+const { meetupRouter } = require('./controllers/meetup.js')
 
 
 /* Step 3
@@ -54,6 +56,7 @@ app.use(express.static(`${__dirname}/client/build`))
 app.use('/api/homework', homeworkRouter)
 app.use('/api/project', projectRouter)
 app.use('/api/deliverables', deliverableRouter)
+app.use('/api/jobtracker', jobTrackerRouter)
 
 
 /* Step 5

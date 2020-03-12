@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const Deliverable = require('../models/Deliverables.js')
+const JobTracker = require('../models/Deliverables.js')
 
 /* Step 3 
  * 
@@ -40,32 +40,32 @@ const  jobTrackerRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-deliverableRouter.get('/',(req, res)=>{
-  Deliverable.find().then((delives)=>{
-    res.json(delives)
+jobTrackerRouter.get('/',(req, res)=>{
+  JobTracker.find().then((Jobs)=>{
+    res.json(Jobs)
   });
 });
 
-deliverableRouter.get('/:deliverableId',(req, res)=>{
-  Deliverable.findById(req.params.homeworkId).then((deliverable)=>{
-    res.json(deliverable)
+jobTrackerRouter.get('/:jobtrackerId',(req, res)=>{
+  JobTracker.findById(req.params.jobtrackerId).then((job)=>{
+    res.json(job)
   });
 });
 
-deliverableRouter.post('/',(req,res)=>{
-  Deliverable.create(req.body).then(()=>{
+jobTrackerRouter.post('/',(req,res)=>{
+  JobTracker.create(req.body).then(()=>{
     res.status(200).end();
   })
 })
 
-deliverableRouter.put('/:deliverableId', (req, res)=>{
-  Deliverable.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
+jobTrackerRouter.put('/:jobtrackerId', (req, res)=>{
+  JobTracker.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
     res.status(200).end();
   });
 });
 
-deliverableRouter.delete('/:deliverableId', (req, res)=>{
-  Deliverable.findByIdAndDelete(req.params.projectId).then(()=>{
+jobTrackerRouter.delete('/:jobtrackerId', (req, res)=>{
+  JobTracker.findByIdAndDelete(req.params.jobtrackerId).then(()=>{
     res.status(200).end();
   })
 })
