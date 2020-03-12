@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateModel = require('../models/template.js')
+const homework = require('../models/homewrok.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const templateModel = require('../models/template.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const classwork = express.Router()
 
 /* Step 4
  * 
@@ -36,9 +36,7 @@ const templateRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-templateRouter.get('/', (req, res) => {
-  res.json('hello world')
-})
+
 
 /* Step 6
  *
