@@ -34,9 +34,14 @@ export default class SingleHomework extends Component {
         const homeworkId = this.props.match.params.homeworkId;
         axios.put('/api/homework/' + homeworkId, this.state.homeworkId).then(()=>{
             this.getHomework()
+            this.setState({
+                redirectToHWs: true
+            })
              
         });
     }
+
+    
 
     deletehomework =()=>{
         const homeworkId = this.props.match.params.homeworkId;
@@ -54,6 +59,9 @@ export default class SingleHomework extends Component {
         if( this.state.redirectToHWs) {
             return <Redirect to="/homework" />
         }
+        if(this.state.submitEditForm) {
+            return <Redirect to="/homework" />
+        }
         
         const {  name, time, todo } = this.state.homework
         return (
@@ -66,7 +74,7 @@ export default class SingleHomework extends Component {
                     <input type="text" name="name" value={this.state.name} onChange={ this.changeInput} placeholder="change name"/><br/><br/>
                     <input type="Date" name="time" value={this.state.time} onChange={ this.changeInput} placeholder="change time"/><br/><br/>
                     <input type="text" name="todo" value={this.state.todo} onChange={ this.changeInput} placeholder="change task"/><br/><br/>
-                    <input type="submit" value="Update"/>
+                    <input  type="submit" value="Update"/>
                     
                 </form>
                 <button onClick={this.deletehomework}>Delete</button>
