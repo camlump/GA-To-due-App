@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const JobTracker = require('../models/Deliverables.js')
+const JobTracker = require('../models/jobtracker.js')
 
 /* Step 3 
  * 
@@ -59,7 +59,7 @@ jobTrackerRouter.post('/',(req,res)=>{
 })
 
 jobTrackerRouter.put('/:jobtrackerId', (req, res)=>{
-  JobTracker.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
+  JobTracker.findByIdAndUpdate(req.params.jobtrackerId, req.body).then(()=>{
     res.status(200).end();
   });
 });

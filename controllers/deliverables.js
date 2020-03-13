@@ -47,7 +47,7 @@ deliverableRouter.get('/',(req, res)=>{
 });
 
 deliverableRouter.get('/:deliverableId',(req, res)=>{
-  Deliverable.findById(req.params.homeworkId).then((deliverable)=>{
+  Deliverable.findById(req.params.deliverableId).then((deliverable)=>{
     res.json(deliverable)
   });
 });
@@ -59,13 +59,13 @@ deliverableRouter.post('/',(req,res)=>{
 })
 
 deliverableRouter.put('/:deliverableId', (req, res)=>{
-  Deliverable.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
+  Deliverable.findByIdAndUpdate(req.params.deliverableId, req.body).then(()=>{
     res.status(200).end();
   });
 });
 
 deliverableRouter.delete('/:deliverableId', (req, res)=>{
-  Deliverable.findByIdAndDelete(req.params.projectId).then(()=>{
+  Deliverable.findByIdAndDelete(req.params.deliverableId).then(()=>{
     res.status(200).end();
   })
 })
