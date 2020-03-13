@@ -21,11 +21,26 @@ export default class Homework extends Component {
         });
     }
 
+    changeInput = (event) => {
+        const addedHw = {...this.state.newHomework}
+        addedHw[event.target.name] = event.target.value
+        this.setState({
+            newHomework: addedHw
+        })
+    }
+
     toggleHwForm = ()=>{
         const newHwForm = !this.state.hwForm
             this.setState({
                 hwForm: newHwForm
             })
+    }
+   onSubmitHw = (event) => {
+        event.preventDefault();
+        axios.post('/api/homework', this.state.newHomework).then(()=>{
+            this.toggleHwForm();
+            this.getHomeworks();
+        })
     }
 
 
@@ -45,8 +60,16 @@ export default class Homework extends Component {
                     })
                 }
                 <div>
-                    <button onClick={ this.toggleHwForm }>Add new Homework</button>
-                </div>
+                    <button onClick={ this.toggleHwForm  }>Add new Homework</button>
+                </div><br/><br/>
+                {
+                    this.state.hwForm ? <form onSubmit={ this.onSubmitHw }>
+                        <input type="text" name="name" onChange={this.changeInput } placeholder="Assingment Name"/><br/><br/>
+                        <input type="Date" name="time" onChange={this.changeInput } placeholder="Due date"/><br/><br/>
+                        <input type="text" name="todo"  onChange={ this.changeInput} placeholder="To-Do"/><br/><br/>
+                        <input type="submit" value="Add"/>
+                    </form> : null
+                }
                
             </div>
         )
