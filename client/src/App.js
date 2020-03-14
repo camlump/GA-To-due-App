@@ -42,7 +42,7 @@ function App() {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/homework">Homework</a>
-          <a class="dropdown-item" href="/projects">Projects</a>
+          <a class="dropdown-item" href="/project">Projects</a>
           <a class="dropdown-item" href="/deliverables">Deliverables</a>
           <a class="dropdown-item" href="/jobtracker">Jobtracker</a>
           <a class="dropdown-item" href="/meetups">Meetups</a>
@@ -57,7 +57,7 @@ function App() {
           <Route exact path="/classwork" component={ Classwork }/>
           <Route exact path="/homework" component={ Homework} />
           <Route exact path="/Hw/:homeworkId" component={ SingleHomework } />
-          <Route exact path="/projects" component={ Projects } />
+          <Route exact path="/project" component={ Projects } />
           <Route exact path="/PJ/:projectId" component={ SingleProject } />
           <Route exact path="/outcomes" component={ Outcomes} />
           <Route exact path="/deliverables" component={ Deliverable } />
