@@ -54,7 +54,7 @@ export default class Homework extends Component {
                     this.state.homework.map((homework, i) => {
                         return (
                             <div key={ i }>
-                                <Link to={ homework._id }>{ homework.name }</Link>
+                                <Link to={'Homework/'+ homework._id }>{ homework.name }</Link>
                             </div>
                         )
                     })

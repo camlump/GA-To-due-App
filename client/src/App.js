@@ -56,16 +56,16 @@ function App() {
           <Route exact path="/" component={Home}/>
           <Route exact path="/classwork" component={ Classwork }/>
           <Route exact path="/homework" component={ Homework} />
-          <Route exact path="/Hw/:homeworkId" component={ SingleHomework } />
+          <Route exact path="/homework/:homeworkId" component={ SingleHomework } />
           <Route exact path="/project" component={ Projects } />
-          <Route exact path="/PJ/:projectId" component={ SingleProject } />
+          <Route exact path="/project/:projectId" component={ SingleProject } />
           <Route exact path="/outcomes" component={ Outcomes} />
           <Route exact path="/deliverables" component={ Deliverable } />
-          <Route exact path="/D/:deliverablesId" component={ SingleDeliverable} />
+          <Route exact path="/deliverables/:deliverablesId" component={ SingleDeliverable} />
           <Route exact path="/jobtracker" component={ Jobtracker } />
-          <Route exact path="/JT/:jobetrackerId" component={ SingleJobTracker } />
+          <Route exact path="/Jobtracer/:jobetrackerId" component={ SingleJobTracker } />
           <Route exact path="/meetups" component={ Meetup} />
-          <Route exact path="/MU/:meetupId" component={ SingleMeetup } />
+          <Route exact path="/Meetups/:meetupId" component={ SingleMeetup } />
           
 
           
