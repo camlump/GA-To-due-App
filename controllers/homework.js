@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const Homework = require('../models/Homework')
+const Homework = require('../models/HomeworkModel.js')
 
 /* Step 3 
  * 
