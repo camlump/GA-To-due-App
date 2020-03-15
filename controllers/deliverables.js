@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const Deliverable = require('../models/Deliverables.js')
+const Deliverable = require('../models/DeliverablesModel.js')
 
 /* Step 3 
  * 

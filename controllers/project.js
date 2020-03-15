@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const Project = require('../models/Project.js')
+const Project = require('../models/ProjectModel.js')
 
 /* Step 3 
  * 

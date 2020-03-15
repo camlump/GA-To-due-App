@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const Meetup = require('../models/Meetup.js')
+const Meetup = require('../models/MeetupModel.js')
 
 /* Step 3 
  * 

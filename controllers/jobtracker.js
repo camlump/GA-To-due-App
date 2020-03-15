@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const JobTracker = require('../models/jobtracker.js')
+const JobTracker = require('../models/jobtrackerModel.js')
 
 /* Step 3 
  * 
