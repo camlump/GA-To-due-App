@@ -1,4 +1,4 @@
-const Homework = require('./Homework')
+const Homework = require('./HomeworkModel')
 
 const newHomeworks = [
     {

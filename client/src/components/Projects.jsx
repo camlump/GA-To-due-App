@@ -57,7 +57,7 @@ export default class Projects extends Component {
                     this.state.projects.map((project, i )=>{
                         return (
                             <div key={i}>
-                                <Link to={ project._id }>{ project.name }</Link>
+                                <Link to={'/project/' + project._id }>{ project.name }</Link>
                             </div>
                         )
                     })
