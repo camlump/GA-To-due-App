@@ -52,7 +52,7 @@ export default class Deliverables extends Component {
                     this.state.deliverable.map((deliverable, i )=>{
                         return(
                             <div key={i}>
-                                <Link to={'/deliverables'+ deliverable._id }>{ deliverable.name }</Link>
+                                <Link to={'deliverables/'+ deliverable._id }>{ deliverable.name }</Link>
                             </div>
                         )
                     })

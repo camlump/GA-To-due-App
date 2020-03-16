@@ -61,7 +61,7 @@ function App() {
           <Route exact path="/project/:projectId" component={ SingleProject } />
           <Route exact path="/outcomes" component={ Outcomes} />
           <Route exact path="/deliverables" component={ Deliverable } />
-          <Route exact path="/deliverables/:deliverablesId" component={ SingleDeliverable} />
+          <Route exact path="/deliverables/:deliverableId" component={ SingleDeliverable} />
           <Route exact path="/jobtracker" component={ Jobtracker } />
           <Route exact path="/Jobtracer/:jobetrackerId" component={ SingleJobTracker } />
           <Route exact path="/meetups" component={ Meetup} />
