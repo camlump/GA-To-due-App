@@ -28,10 +28,8 @@ export default class SingleProject extends Component {
     submitEditForm = (event) => {
         event.preventDefault();
         const projectId = this.props.match.params.projectId;
-        axios.delete('/api/project' + projectId, this.state.projectId).then(()=>{
-            this.setState({
-                redirectToProjects: true
-            });
+        axios.delete('/api/project' + projectId, this.state.editProject).then(()=>{
+                    this.getProject()
         });
         
     }
@@ -63,6 +61,15 @@ export default class SingleProject extends Component {
                 <h2>Name: { name }</h2>
                 <h3> Date: { time }</h3>
                 <p>Doing: { todo }</p>
+
+                <form onSubmit={this.submitEditForm}>
+                    <input type="text" name="name" value={ this.state.editProject.name } onChange={ this.changeInput }/>
+                    <input type="Date" name="time" value={ this.state.editProject.time } onChange={ this.changeInput }/>
+                    <input type="text" name="todo" value={ this.state.editProject.todo} onChange={ this.changeInput }/>
+                    <input type="submit" value="Add"/>
+                </form>
+
+                <button onClick={this.deleteProject}>Delete</button>
                 
             </div>
         )
