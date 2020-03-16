@@ -21,9 +21,10 @@ export default class SingleHomework extends Component {
             })
         })
     }
+    
     changeInput = (event)=>{
         const editedHw = {...this.state.editHw}
-        editedHw[event.target.name] = event.target.value
+        editedHw[event.target.name] = event.target.value;
             this.setState({
                 editHw: editedHw
             });
@@ -32,11 +33,9 @@ export default class SingleHomework extends Component {
     submitEditForm = (event)=>{
         event.preventDefault();
         const homeworkId = this.props.match.params.homeworkId;
-        axios.put('/api/homework/' + homeworkId, this.state.homeworkId).then(()=>{
+        axios.put('/api/homework/' + homeworkId, this.state.editHw).then(()=>{
             this.getHomework()
-            this.setState({
-                redirectToHWs: true
-            })
+          
              
         });
     }
@@ -51,9 +50,12 @@ export default class SingleHomework extends Component {
             });
         });
     }
-            componentDidMount(){
-                this.getHomework()
-            }
+
+    componentDidMount(){
+        this.getHomework()
+        
+    }
+            
 
     render() {
         if( this.state.redirectToHWs) {

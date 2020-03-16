@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { response } from 'express';
+import { Redirect } from 'react-router-dom'
 
 export default class SingleProject extends Component {
     state = {
@@ -51,8 +51,18 @@ export default class SingleProject extends Component {
     }
     
     render() {
+        if(this.state.redirectToProjects){
+            return <Redirect to="/project" />
+        }
+        if(this.state.submitEditForm) {
+            return <Redirect to="/project" />
+        }
+        const { name, time, todo} = this.state.project
         return (
             <div>
+                <h2>Name: { name }</h2>
+                <h3> Date: { time }</h3>
+                <p>Doing: { todo }</p>
                 
             </div>
         )
