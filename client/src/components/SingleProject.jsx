@@ -10,7 +10,7 @@ export default class SingleProject extends Component {
     }
     getProject = () =>{
         const projectId = this.props.match.params.projectId;
-        axios.get('api/project' + projectId).then((response)=>{
+        axios.get('api/project/' + projectId).then((response)=>{
                 this.setState({
                     project: response.data,
                     editProject: response.data
@@ -28,7 +28,7 @@ export default class SingleProject extends Component {
     submitEditForm = (event) => {
         event.preventDefault();
         const projectId = this.props.match.params.projectId;
-        axios.put('/api/project' + projectId, this.state.editProject).then(()=>{
+        axios.put('/api/project/' + projectId, this.state.editProject).then(()=>{
                     this.getProject()
         });
         
@@ -37,7 +37,7 @@ export default class SingleProject extends Component {
     deleteProject = () =>{
         
         const projectId = this.props.match.params.projectId;
-        axios.delete('/api/project' + projectId).then(()=>{
+        axios.delete('/api/project/' + projectId).then(()=>{
             this.setState({
                 redirectToProjects: true
             })
@@ -63,10 +63,10 @@ export default class SingleProject extends Component {
                 <p>Doing: { todo }</p>
 
                 <form onSubmit={this.submitEditForm}>
-                    <input type="text" name="name" value={ this.state.editProject.name } onChange={ this.changeInput }/>
-                    <input type="Date" name="time" value={ this.state.editProject.time } onChange={ this.changeInput }/>
-                    <input type="text" name="todo" value={ this.state.editProject.todo} onChange={ this.changeInput }/>
-                    <input type="submit" value="Add"/>
+                    <input type="text" name="name" value={ this.state.editProject.name } onChange={ this.changeInput } placeholder="change name"/><br/><br/>
+                    <input type="Date" name="time" value={ this.state.editProject.time } onChange={ this.changeInput } placeholder="change time"/><br/><br/>
+                    <input type="text" name="todo" value={ this.state.editProject.todo} onChange={ this.changeInput } placeholder="change task"/><br/><br/>
+                    <input type="submit" value="Update"/>
                 </form>
 
                 <button onClick={this.deleteProject}>Delete</button>
