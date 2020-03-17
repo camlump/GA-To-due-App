@@ -47,7 +47,7 @@ projectRouter.get('/',(req, res)=>{
 });
 
 projectRouter.get('/:projectId',(req, res)=>{
-  Project.findById(req.params.homeworkId).then((project)=>{
+  Project.findById(req.params.projectId).then((project)=>{
     res.json(project)
   });
 });
@@ -60,9 +60,15 @@ projectRouter.post('/',(req,res)=>{
 
 projectRouter.put('/:projectId', (req, res)=>{
   Project.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
-    res.status(200).end();
-  });
-});
+    res.status(200).end()
+  })
+})
+
+// projectRouter.put('/:projectId', (req, res)=>{
+//   Project.findByIdAndUpdate(req.params.projectId, req.body).then(()=>{
+//     res.status(200).end();
+//   });
+// });
 
 projectRouter.delete('/:projectId', (req, res)=>{
   Project.findByIdAndDelete(req.params.projectId).then(()=>{

@@ -70,9 +70,9 @@ export default class Projects extends Component {
                 </div><br/><br/>
                     {
                     this.state.projectForm ? <form onSubmit={ this.onSubmitProject}>
-                        <input type="text" name="name" onChange={this.changeInput} placeholder="Project Name"/>
-                        <input type="Date" name="time" onChange={this.changeInput} placeholder="Due Date"/>
-                        <input type="text" name="todo" onChange={this.changeInput} placeholder="To-Do"/>
+                        <input type="text" name="name" onChange={this.changeInput} placeholder="Project Name"/> <br/> <br/>
+                        <input type="Date" name="time" onChange={this.changeInput} placeholder="Due Date"/> <br/> <br/>
+                        <input type="text" name="todo" onChange={this.changeInput} placeholder="To-Do"/> <br/> <br/>
                        
                         <input type="submit" value="Add"/>
 

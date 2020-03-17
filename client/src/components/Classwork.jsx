@@ -36,7 +36,9 @@ export default class Classwork extends Component {
         return (
             <div>
                 <Link to={"/homework"}><h1>Homework</h1></Link>
+                <div>{this.state.homework.length}</div>
                 <Link to={"/project"}><h1>Projects</h1></Link>
+                 <div>{ this.state.projects.length}</div>
                 
             </div>
         )

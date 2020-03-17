@@ -53,6 +53,7 @@ export default class Deliverables extends Component {
                         return(
                             <div key={i}>
                                 <Link to={'deliverables/'+ deliverable._id }>{ deliverable.name }</Link>
+                                <select name="name" id=""></select>
                             </div>
                         )
                     })
