@@ -29,13 +29,13 @@ export default class SingleDeliverable extends Component {
     submitEditForm = (event)=>{
         event.preventDefult();
         const deliverableId = this.props.match.params.deliverableId;
-        axios.put('/api/deliverables' + deliverableId, this.state.editDelive).then(()=>{
+        axios.put('/api/deliverables/' + deliverableId, this.state.editDelive).then(()=>{
             this.getDeliverable()
-        })
+        });
     }
     deleteDeliverable= ()=>{
         const deliverableId = this.props.match.params.deliverableId;
-        axios.delete('/api/deliverables' + deliverableId).then(()=>{
+        axios.delete('/api/deliverables/' + deliverableId).then(()=>{
             this.setState({
                 redirectToDelive: true
             })
@@ -47,11 +47,11 @@ export default class SingleDeliverable extends Component {
     }
     render() {
         if(this.state.redirectToDelive){
-            return <Redirect to="/deliverables" />
+            return <Redirect to="/jobtracker" />
         }
 
         if(this.state.submitEditForm) {
-            return <Redirect to="/deliverables" />
+            return <Redirect to="/jobtracker" />
         }
 
         const { name, time, todo } = this.state.deliverable

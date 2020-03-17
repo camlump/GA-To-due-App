@@ -63,7 +63,7 @@ function App() {
           <Route exact path="/deliverables" component={ Deliverable } />
           <Route exact path="/deliverables/:deliverableId" component={ SingleDeliverable} />
           <Route exact path="/jobtracker" component={ Jobtracker } />
-          <Route exact path="/Jobtracer/:jobetrackerId" component={ SingleJobTracker } />
+          <Route exact path="/Jobtracker/:jobtrackerId" component={ SingleJobTracker } />
           <Route exact path="/meetups" component={ Meetup} />
           <Route exact path="/Meetups/:meetupId" component={ SingleMeetup } />
           

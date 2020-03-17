@@ -73,9 +73,9 @@ export default class SingleHomework extends Component {
                 <p> Doing:{ todo }</p>
 
                 <form onSubmit={this.submitEditForm}>
-                    <input type="text" name="name" value={this.state.name} onChange={ this.changeInput} placeholder="change name"/><br/><br/>
-                    <input type="Date" name="time" value={this.state.time} onChange={ this.changeInput} placeholder="change time"/><br/><br/>
-                    <input type="text" name="todo" value={this.state.todo} onChange={ this.changeInput} placeholder="change task"/><br/><br/>
+                    <input type="text" name="name" value={this.state.editHw.name} onChange={ this.changeInput} placeholder="change name"/><br/><br/>
+                    <input type="Date" name="time" value={this.state.editHw.time} onChange={ this.changeInput} placeholder="change time"/><br/><br/>
+                    <input type="text" name="todo" value={this.state.editHw.todo} onChange={ this.changeInput} placeholder="change task"/><br/><br/>
                     <input  type="submit" value="Update"/>
                     
                 </form>

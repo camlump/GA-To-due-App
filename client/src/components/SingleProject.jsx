@@ -28,7 +28,7 @@ export default class SingleProject extends Component {
     submitEditForm = (event) => {
         event.preventDefault();
         const projectId = this.props.match.params.projectId;
-        axios.delete('/api/project' + projectId, this.state.editProject).then(()=>{
+        axios.put('/api/project' + projectId, this.state.editProject).then(()=>{
                     this.getProject()
         });
         
