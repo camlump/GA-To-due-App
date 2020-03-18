@@ -32,7 +32,9 @@ export default class Outcomes extends Component {
         return (
             <div>
                 <Link to={"/deliverables"}><h1>Deliverables</h1></Link>
+                    <div>{this.state.deliverables.length}</div>
                 <Link to={"/jobtracker"}><h1>Jobtracker</h1></Link>
+                <div>{this.state.jobTracker.length}</div>
             </div>
         )
     }
