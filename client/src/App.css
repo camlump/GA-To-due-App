@@ -31,3 +31,20 @@
     transform: rotate(360deg);
   }
 }
+
+.red {
+  color: #FF2841 !important;
+  text-decoration: none;
+  
+}
+.container .row .col-sm {
+  background-color: black;
+  border: solid 1px white;
+  
+
+}
+
+.navbar {
+  background-color: #FF2841 !important;
+}
+

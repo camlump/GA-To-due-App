@@ -35,14 +35,14 @@ export default class Classwork extends Component {
     render() {
         return (
             <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                        <Link to={"/homework"}><h1>Homework</h1></Link>
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                        <Link to={"/homework"}><h1 className="red">Homework</h1></Link>
                         <div>{this.state.homework.length}</div>
                         </div>
-                        <div class="col">
-                        <Link to={"/project"}><h1>Projects</h1></Link>
+                        <div className="col">
+                        <Link to={"/project"}><h1 className="red">Projects</h1></Link>
                         <div>{this.state.projects.length}</div>
                         </div>
                     </div>
