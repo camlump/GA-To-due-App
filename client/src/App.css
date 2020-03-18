@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  
+ 
 }
 
 .App-logo {
@@ -32,19 +34,99 @@
   }
 }
 
-.red {
-  color: #FF2841 !important;
-  text-decoration: none;
+.navbar .navbar-brand img{
+  width: 200px;
+  
   
 }
-.container .row .col-sm {
-  background-color: black;
-  border: solid 1px white;
+.navbar .navbar-brand img::shadow{
+  color: #444444 ;
+}
+
+.Home{
+  color: #000000;
+  background-color: #FFD800;
+  font-size: 24px;
+  font-family: 'Montserrat';
+  font-weight: 800;
+  text-decoration: none;
+ 
+  
+}
+
+
+.Home:hover{
+  color: #ffffff;
+  background-color: #000000;
+
+}
+
+.link{
+  text-decoration: none;
+}
+
+.red {
+  color: #FF2841 !important;
+  text-decoration: none !important;
+
+ 
+  
+}
+
+
+
+.container .row .col-lg {
+  margin-top: 60px;
+  
+  
   
 
 }
 
 .navbar {
-  background-color: #FF2841 !important;
+  background-color: #000000!important;
+}
+
+.navbar .navbar-nav a {
+  color: #ffffff !important;
+  font-family: 'Montserrat';
+  margin: auto 10px;
+
+}
+
+.navbar .navbar-nav .dropdown-item {
+  color: #000000 !important;
+}
+
+.navbar-light .navbar-toggler{
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.navbar-light .navbar-toggler-icon{
+  background-color: #ffffff;
+  
+}
+
+
+
+.img-fluid:hover{
+    color: #000000;
+    opacity: .8;
+}
+
+.navbar .navbar-nav a:hover {
+  color:  #000000 !important;
+  background-color: #FF2841;
+}
+
+.navbar .navbar-nav .nav-item .dropdown {
+  color: black;
+  
+}
+
+.listNum{
+  font-size: 40px;
+  font-weight: 800;
 }
 
