@@ -31,14 +31,14 @@ function App() {
         <a className="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="https://slack.com/">Slack</a>
+        <a className="nav-link" href="https://slack.com/" target="_blank">Slack.com</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="https://www.meetup.com/">Meetup</a>
+        <a className="nav-link" href="https://www.meetup.com/" target="_blank">Meetup.com</a>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          my Todos
+           To-dos
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a className="dropdown-item" href="/homework">Homework</a>

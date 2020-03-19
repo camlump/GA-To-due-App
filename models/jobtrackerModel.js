@@ -10,7 +10,14 @@ const Jobtracker = new mongoose.Schema({
 
  isDone: false,
 
- AppStatus: false
+ AppStatus: [
+    'Pinned',
+     'Applied',
+     'Interview',
+    'Technical',
+    'Offered'
+ ]
+ 
 
 })
 

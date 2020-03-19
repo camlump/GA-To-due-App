@@ -32,6 +32,9 @@ export default class SingleMeetup extends Component {
             const meetupId = this.props.match.params.meetupId;
             axios.put('/api/meetup/' + meetupId, this.state.editMeetup).then(()=>{
                 this.getMeetup()
+                this.setState({
+                    redirectToMeetups: true
+                })
             })
         }
 
@@ -66,9 +69,9 @@ export default class SingleMeetup extends Component {
 
 
                 <form onSubmit={this.submitEditForm }>
-                    <input type="text" name="name" value={ this.state.editMeetup.name} onChange={this.changeInput } placeholder="change name"/><br/><br/>
-                    <input type="Date" name="time" value={ this.state.editMeetup.time} onChange={this.changeInput} placeholder="change date"/><br/><br/>
-                    <input type="text" name="location" value={ this.state.editMeetup.location} onChange={this.changeInput} placeholder="change location"/><br/><br/>
+                    Name: <input type="text" name="name" value={ this.state.editMeetup.name} onChange={this.changeInput } placeholder="change name"/><br/><br/>
+                    Date: <input type="Date" name="time" value={ this.state.editMeetup.time} onChange={this.changeInput} placeholder="change date"/><br/><br/>
+                    Location: <input type="text" name="location" value={ this.state.editMeetup.location} onChange={this.changeInput} placeholder="change location"/><br/><br/>
                     <input class="submit" type="submit" value="Update"/> 
                 </form> <br/><br/>
 

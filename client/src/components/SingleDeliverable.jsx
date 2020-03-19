@@ -33,6 +33,9 @@ export default class SingleDeliverable extends Component {
         const deliverableId = this.props.match.params.deliverableId;
         axios.put('/api/deliverables/' + deliverableId, this.state.editDelive).then(()=>{
             this.getDeliverables()
+            this.setState({
+                redirectToDeliverables: true
+            })
         })
     }
 
@@ -66,9 +69,9 @@ export default class SingleDeliverable extends Component {
 
                 <form onSubmit={ this.submitEditForm}>
                     <input type="text" name="name" value={ this.state.editDelive.name } onChange={ this.changeInput} placeholder="name"/><br/><br/>
-                    <input type="Date" name="time" value={ this.state.editDelive.name } onChange={ this.changeInput} placeholder="time"/><br/><br/>
-                    <input type="text" name="todo" value={ this.state.editDelive.name } onChange={ this.changeInput} placeholder="To-Do"/><br/><br/>
-                    <input type="submit" value="Update"/>
+                    <input type="Date" name="time" value={ this.state.editDelive.time } onChange={ this.changeInput} placeholder="time"/><br/><br/>
+                    <input type="text" name="todo" value={ this.state.editDelive.todo } onChange={ this.changeInput} placeholder="To-Do"/><br/><br/>
+                    <input className="submit" type="submit" value="Update"/>
                 </form>
                 <button className="submit" onClick={ this.deleteDeliverables}>Delete</button>
             </div>

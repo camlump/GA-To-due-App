@@ -29,8 +29,19 @@ export default class SingleJobTracker extends Component {
            const jobtrackerId = this.props.match.params.jobtrackerId
            axios.put('/api/jobtracker/' + jobtrackerId, this.state.editJobTracker).then(()=>{
                this.getJobtracker()
+               this.setState({
+                   redirectToJts: true
+               })
            });
        }
+
+    //    selectAppstatus = (event) =>{
+    //        const selectedJT = {...this.state.editJobTracker}
+    //        selectedJT[event.target.option] = event.target.value
+    //                 this.setState({
+    //                     editJobTracker: selectedJT
+    //                 })
+    //     }
 
        deleteJobTracker= () => {
         const jobtrackerId = this.props.match.params.jobtrackerId
@@ -55,7 +66,7 @@ export default class SingleJobTracker extends Component {
             return <Redirect to="/jobtracker" />
         }
 
-        const { name, time, todo } = this.state.jobtracker
+        const { name, time, todo, appStatus } = this.state.jobtracker
         return (
             <div>
                 <Link className="RedirectLinks" to="/jobtracker">Back to jobtracker page</Link>
@@ -67,7 +78,17 @@ export default class SingleJobTracker extends Component {
                     <input type="text" name="name" value={this.state.name} onChange={ this.changeInput} placeholder="change name"/><br/><br/>
                     <input type="Date" name="time" value={this.state.time} onChange={ this.changeInput} placeholder="change time"/><br/><br/>
                     <input type="text" name="todo" value={this.state.todo} onChange={ this.changeInput} placeholder="change task"/><br/><br/>
-                    <input className="submit"  type="submit" value="Add"/>
+                    <div class="form-group">
+                            <label for="sel1"></label>
+                            <select  class="form-control" id="sel1">
+                                <option value="Pinned">Pinned</option>
+                                <option value="Applied">Applied</option>
+                                <option value="Interview">Interview</option>
+                                <option value="Technical">Technical</option>
+                                <option value="Offered">offered</option>
+                            </select>
+                            </div>
+                    <input className="submit"  type="submit" value="Update"/>
                     
                 </form>
                 <button onClick={this.deleteJobTracker}>Delete</button>
