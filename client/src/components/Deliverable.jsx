@@ -80,6 +80,7 @@ export default class Deliverables extends Component {
                 
                 <th scope="col">Date</th>
                 <th scope="col">Name</th>
+                <th scope="col">Reviewed</th>
                 <th scope="col">Finish</th>
                 </tr>
             </thead>
@@ -91,6 +92,16 @@ export default class Deliverables extends Component {
                 <td>
                     <Link className="mappedTodos" to={'deliverables/'+ deliverable._id }>{ deliverable.name }</Link>
 
+                </td>
+                <td>
+                <div class="form-group">
+                    <label for="sel1"></label>
+                    <select class="form-control" id="sel1">
+                        <option>no</option>
+                        <option>Yes</option>
+                        
+                    </select>
+                    </div>
                 </td>
                 <td>
                 <div class="custom-control custom-checkbox">
