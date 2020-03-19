@@ -86,6 +86,7 @@ export default class JobTracker extends Component {
                 
                 <th scope="col">Homework</th>
                 <th scope="col">Name</th>
+                <th scope="col">Status</th>
                 <th scope="col">Finish</th>
                 </tr>
             </thead>
@@ -98,6 +99,20 @@ export default class JobTracker extends Component {
                     <Link className="mappedTodos" to={'jobtracker/'+ jobtracker._id }>{ jobtracker.name }</Link>
 
                 </td>
+                <td>
+                <div class="form-group">
+  <label for="sel1"></label>
+  <select class="form-control" id="sel1">
+    <option>Pinned</option>
+    <option>Applied</option>
+    <option>Interview</option>
+    <option>Technical</option>
+    <option>offered</option>
+  </select>
+</div>
+                </td>
+               
+                
                 <td>
                 <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>

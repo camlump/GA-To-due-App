@@ -90,6 +90,7 @@ export default class Projects extends Component {
       
       <th scope="col">Date</th>
       <th scope="col">Name</th>
+      <th scope="col">Status</th>
       <th scope="col">Finish</th>
     </tr>
   </thead>
@@ -100,6 +101,17 @@ export default class Projects extends Component {
     <th scope="row">{ project.time}</th>
       <td>
         <Link className="mappedTodos" to={'project/'+ project._id }>{ project.name }</Link>
+
+      </td>
+      <td>
+      <div class="form-group">
+  <label for="sel1"></label>
+  <select class="form-control" id="sel1">
+    <option>No</option>
+    <option>yes</option>
+    
+  </select>
+</div>
 
       </td>
       <td>
