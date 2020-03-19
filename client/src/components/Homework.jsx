@@ -50,17 +50,27 @@ export default class Homework extends Component {
     render() {
         return (
             <div>
+                <table class="table">
+                    <thead class="thead-dark">
+                                    <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                
                  {
                     this.state.homework.map((homework, i) => {
                         return (
                             <div key={ i }>
+                                
                                 <Link to={'homework/'+ homework._id }>{ homework.name }</Link>
                             </div>
                         )
                     })
                 }
+                </table>
                 <div>
-                    <button onClick={ this.toggleHwForm  }>Add new Homework</button>
+                    <button className="redButton" onClick={ this.toggleHwForm  }>Add new Homework</button>
                 </div><br/><br/>
                 {
                     this.state.hwForm ? <form onSubmit={ this.onSubmitHw }>

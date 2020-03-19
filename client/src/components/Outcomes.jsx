@@ -30,12 +30,22 @@ export default class Outcomes extends Component {
 
     render() {
         return (
-            <div>
-                <Link to={"/deliverables"}><h1>Deliverables</h1></Link>
-                    <div>{this.state.deliverables.length}</div>
-                <Link to={"/jobtracker"}><h1>Jobtracker</h1></Link>
-                <div>{this.state.jobTracker.length}</div>
+                <div>
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                        <Link to={"/deliverables"} style={{ textDecoration: 'none'}}><h1 className="red">Deliverables</h1></Link>
+                                        <div><span className="listNum">{this.state.deliverables.length}</span></div>
+                        </div>
+                        <div class="col-md">
+                        <Link to={"/jobtracker"} style={{ textDecoration: 'none'}}><h1 className="red">Jobtracker</h1></Link>
+                                    <div><span className="listNum">{this.state.jobTracker.length}</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+                    
+            
         )
     }
 }

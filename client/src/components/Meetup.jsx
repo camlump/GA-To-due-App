@@ -58,7 +58,7 @@ export default class Meetup extends Component {
                     })
                 }
                 <div>
-                    <button onClick={ this.toggleMeetupForm}>Add Meetup</button>
+                    <button className="redButton" onClick={ this.toggleMeetupForm}>Add Meetup</button>
                 </div><br/><br/>
 
                 {

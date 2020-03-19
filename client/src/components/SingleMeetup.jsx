@@ -56,15 +56,17 @@ export default class SingleMeetup extends Component {
             return <Redirect to="/meetup" />
         }
 
-        const { name, time, } = this.state.meetup
+        const { name, time, location } = this.state.meetup
         return (
             <div>
                 <h2>{ name }</h2>
                 <h3>{ time }</h3>
+                <h3>{ location }</h3>
 
                 <form onSubmit={this.submitEditForm }>
                     <input type="text" name="name" value={ this.state.editMeetup.name} onChange={this.changeInput } placeholder="change name"/>
                     <input type="Date" name="time" value={ this.state.editMeetup.time} onChange={this.changeInput} placeholder="change date"/>
+                    <input type="text" name="location" value={ this.state.editMeetup.location} onChange={this.changeInput} placeholder="change location"/>
                     <input type="submit" value="Update"/>
                 </form>
                 

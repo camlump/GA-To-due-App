@@ -32,17 +32,21 @@ export default class Classwork extends Component {
         this.getHomeworks();
         this.getProjects();
     }
-    render() {
-        return (
+    render() { 
+      
+
+
+    
+return (
             <div>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md">
-                        <Link to={"/homework"}><h1 className="red">Homework</h1></Link>
+                        <Link to={"/homework"} style={{ textDecoration: 'none'}}><h1 className="red">Homework</h1></Link>
                         <div><span className="listNum">{this.state.homework.length}</span></div>
                         </div>
                         <div className="col-md">
-                        <Link to={"/project"}><h1 className="red">Projects</h1></Link>
+                        <Link to={"/project"} style={{ textDecoration: 'none'}}><h1 className="red">Projects</h1></Link>
                         <div><span className="listNum">{this.state.projects.length}</span></div>
                         </div>
                     </div>

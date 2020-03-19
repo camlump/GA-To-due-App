@@ -66,7 +66,7 @@ export default class Projects extends Component {
                     })
                 }
                 <div>
-                    <button onClick={ this.toggleProjectForm }>Add new Project</button>
+                    <button className="redButton" onClick={ this.toggleProjectForm }>Add new Project</button>
                 </div><br/><br/>
                     {
                     this.state.projectForm ? <form onSubmit={ this.onSubmitProject}>

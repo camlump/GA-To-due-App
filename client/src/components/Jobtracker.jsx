@@ -61,7 +61,7 @@ export default class JobTracker extends Component {
                     })
                 }
                 <div>
-                    <button onClick={ this.toggleJtForm }>Add new task</button>
+                    <button className="redbutton" onClick={ this.toggleJtForm }>Add new task</button>
                 </div>
                 {
                     this.state.jobTrackerForm? <form onSubmit={ this.onSubmitJobTracker }>
