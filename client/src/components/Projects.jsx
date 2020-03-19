@@ -90,7 +90,7 @@ export default class Projects extends Component {
       
       <th scope="col">Date</th>
       <th scope="col">Name</th>
-      <th scope="col">Status</th>
+      <th scope="col">presented</th>
       <th scope="col">Finish</th>
     </tr>
   </thead>
