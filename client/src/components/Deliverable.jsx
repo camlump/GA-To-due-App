@@ -58,6 +58,17 @@ export default class Deliverables extends Component {
         return (
             <div>
                 <div>
+                    <button className="redButton" onClick={this.toggleDeliveForm}>Add new Deliverables task</button>
+                </div><br/><br/>
+                <div>
+                    {
+                        this.state.deliverableForm ? <form onSubmit={this.onsubmitDeliveravble}>
+                            <input type="text" name="name" onChange={this.changeInput } placeholder="Deliverable name"/><br/><br/>
+                            <input type="Date" name="time" onChange={this.changeInput } placeholder="Due Date"/><br/><br/>
+                            <input type="text" name="todo" onChange={this.changeInput } placeholder="To-Do"/><br/><br/>
+                            <input className="submit" type="submit" value="Add"/>
+                        </form> : null
+                    }
                         {
                                 this.state.deliverable.map((deliverable, i) => {
                                     return (
@@ -67,7 +78,7 @@ export default class Deliverables extends Component {
             <thead>
                 <tr>
                 
-                <th scope="col">Homework</th>
+                <th scope="col">Date</th>
                 <th scope="col">Name</th>
                 <th scope="col">Finish</th>
                 </tr>
@@ -76,13 +87,16 @@ export default class Deliverables extends Component {
             <tbody>
                 <tr>
 
-                <th scope="row">Due</th>
+                <th scope="row">{ deliverable.time}</th>
                 <td>
-                    <Link to={'homework/'+ deliverable._id }>{ deliverable.name }</Link>
+                    <Link className="mappedTodos" to={'deliverables/'+ deliverable._id }>{ deliverable.name }</Link>
 
                 </td>
                 <td>
-                    <button onClick={ this.deleteDeliverables}>Done</button>
+                <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>
+            <label class="custom-control-label" for="defaultUnchecked"></label>
+            </div>
                 </td>
                 </tr>
                 
@@ -113,17 +127,6 @@ export default class Deliverables extends Component {
                         )
                     })
                 } */}
-                <div>
-                    <button className="redButton" onClick={this.toggleDeliveForm}>Add new Deliverables task</button>
-                </div><br/><br/>
-                {
-                    this.state.deliverableForm ? <form onSubmit={this.onsubmitDeliveravble}>
-                        <input type="text" name="name" onChange={this.changeInput } placeholder="Deliverable name"/><br/><br/>
-                        <input type="Date" name="time" onChange={this.changeInput } placeholder="Due Date"/><br/><br/>
-                        <input type="text" name="todo" onChange={this.changeInput } placeholder="To-Do"/><br/><br/>
-                        <input type="submit" value="Add"/>
-                    </form> : null
-                }
             </div>
         )
     }

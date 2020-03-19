@@ -162,3 +162,36 @@ button{
   color: #ffffff;
 }
 
+.submit{
+  font: 18px;
+  background-color: #FF2841;
+  margin: 0px 0px 3px;
+  padding: 13px 32px;
+  font-family: 'montserrat';
+  color: #ffffff;
+
+}
+.mappedTodos{
+  color: #ffffff;
+  font-family: 'montserrat';
+  font-size: 24px;
+  text-decoration: none !important;
+}
+
+.mappedTodos:hover{
+  color: #FF2841;
+}
+
+.RedirectLinks{
+  float: left;
+  color: #FF2841;
+  font-size: 24px;
+  text-decoration: none !important;
+}
+.RedirectLinks:hover{
+  color: #000000;
+}
+
+h2{
+  clear: left;
+}

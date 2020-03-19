@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export default class SingleDeliverable extends Component {
     state={
@@ -59,6 +59,7 @@ export default class SingleDeliverable extends Component {
         const { name, time, todo } = this.state.deliverable
         return (
             <div>
+                <Link className="RedirectLinks" to="/deliverables">Back to Deliverables page</Link>
                 <h2>{ name}</h2>
                 <h3>{ time }</h3>
                 <p>{ todo }</p>
@@ -69,7 +70,7 @@ export default class SingleDeliverable extends Component {
                     <input type="text" name="todo" value={ this.state.editDelive.name } onChange={ this.changeInput} placeholder="To-Do"/><br/><br/>
                     <input type="submit" value="Update"/>
                 </form>
-                <button onClick={ this.deleteDeliverables}>Delete</button>
+                <button className="submit" onClick={ this.deleteDeliverables}>Delete</button>
             </div>
         )
     }

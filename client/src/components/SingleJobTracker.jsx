@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 export default class SingleJobTracker extends Component {
         state ={
@@ -58,6 +58,7 @@ export default class SingleJobTracker extends Component {
         const { name, time, todo } = this.state.jobtracker
         return (
             <div>
+                <Link className="RedirectLinks" to="/jobtracker">Back to jobtracker page</Link>
                  <h2>Name: { name }</h2>
                 <h3> Time:{ time }</h3>
                 <p> Doing:{ todo }</p>
@@ -66,7 +67,7 @@ export default class SingleJobTracker extends Component {
                     <input type="text" name="name" value={this.state.name} onChange={ this.changeInput} placeholder="change name"/><br/><br/>
                     <input type="Date" name="time" value={this.state.time} onChange={ this.changeInput} placeholder="change time"/><br/><br/>
                     <input type="text" name="todo" value={this.state.todo} onChange={ this.changeInput} placeholder="change task"/><br/><br/>
-                    <input  type="submit" value="Add"/>
+                    <input className="submit"  type="submit" value="Add"/>
                     
                 </form>
                 <button onClick={this.deleteJobTracker}>Delete</button>

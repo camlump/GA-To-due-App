@@ -65,7 +65,7 @@ function App() {
           <Route exact path="/jobtracker" component={ Jobtracker } />
           <Route exact path="/Jobtracker/:jobtrackerId" component={ SingleJobTracker } />
           <Route exact path="/meetups" component={ Meetup} />
-          <Route exact path="/Meetup/:meetupId" component={ SingleMeetup } />
+          <Route exact path="/meetup/:meetupId" component={ SingleMeetup } />
           
 
           

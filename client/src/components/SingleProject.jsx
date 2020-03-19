@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 export default class SingleProject extends Component {
@@ -62,6 +62,7 @@ export default class SingleProject extends Component {
         const { name, time, todo } = this.state.project
         return (
             <div>
+                <Link className="RedirectLinks" to="/project">Back to Projects page</Link>
                 <h2>name: { name }</h2>
                  <h3>time: { time }</h3>
                 <p>Doing: { todo }</p>
@@ -70,7 +71,7 @@ export default class SingleProject extends Component {
                    <input type="text" name="name" value={ this.state.editProject.name } onChange={ this.changeInput} placeholder="name"/><br/><br/>
                    <input type="Date" name="time" value={ this.state.editProject.time } onChange={ this.changeInput} placeholder="name"/><br/><br/>
                    <input type="text" name="todo" value={ this.state.editProject.todo} onChange={ this.changeInput} placeholder="name"/><br/><br/>
-                   <input type="submit" value="Update"/>
+                   <input className="submit" type="submit" value="Update"/>
                    
                </form>
 
