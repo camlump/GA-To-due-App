@@ -42,13 +42,68 @@ export default class Deliverables extends Component {
         })
     }
 
+    deleteDeliverables = () =>{
+        const deliverableId = this.props.match.params.deliverableId;
+        axios.delete('/api/deliverables' + deliverableId).then(()=>{
+            this.setState({
+                redirectToDeliverables: true
+            })
+        })
+    }
+
     componentDidMount(){
         this.getDeliverables()
     }
     render() {
         return (
             <div>
-                {
+                <div>
+                        {
+                                this.state.deliverable.map((deliverable, i) => {
+                                    return (
+                                        
+                                        <div key={ i }>
+                                        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                
+                <th scope="col">Homework</th>
+                <th scope="col">Name</th>
+                <th scope="col">Finish</th>
+                </tr>
+            </thead>
+                                        
+            <tbody>
+                <tr>
+
+                <th scope="row">Due</th>
+                <td>
+                    <Link to={'homework/'+ deliverable._id }>{ deliverable.name }</Link>
+
+                </td>
+                <td>
+                    <button onClick={ this.deleteDeliverables}>Done</button>
+                </td>
+                </tr>
+                
+            </tbody>
+            </table>
+                                
+                                
+                 </div>
+                            
+                )
+            })
+        }
+        </div>
+
+
+
+
+
+
+
+                {/* {
                     this.state.deliverable.map((deliverable, i )=>{
                         return(
                             <div key={i}>
@@ -57,7 +112,7 @@ export default class Deliverables extends Component {
                             </div>
                         )
                     })
-                }
+                } */}
                 <div>
                     <button className="redButton" onClick={this.toggleDeliveForm}>Add new Deliverables task</button>
                 </div><br/><br/>

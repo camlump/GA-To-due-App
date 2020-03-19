@@ -42,33 +42,64 @@ export default class Homework extends Component {
             this.getHomeworks();
         })
     }
+    deletehomework =()=>{
+        const homeworkId = this.props.match.params.homeworkId;
+        axios.delete('/api/homework/' + homeworkId).then(()=>{
+            this.setState({
+                redirectToHWs : true
+            });
+        });
+    }
 
 
     componentDidMount(){
         this.getHomeworks();
     }
     render() {
+       
         return (
             <div>
-                <table class="table">
-                    <thead class="thead-dark">
-                                    <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Status</th>
-                                    </tr>
-                                </thead>
+               {
+                     this.state.homework.map((homework, i) => {
+                         return (
+                             
+                             <div key={ i }>
+                             <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">Homework</th>
+      <th scope="col">Name</th>
+      <th scope="col">Finish</th>
+    </tr>
+  </thead>
+                             
+  <tbody>
+    <tr>
+
+      <th scope="row">Due</th>
+      <td>
+        <Link to={'homework/'+ homework._id }>{ homework.name }</Link>
+
+      </td>
+      <td>
+          <button onClick={ this.deletehomework}>Done</button>
+      </td>
+    </tr>
+     
+  </tbody>
+</table>
                                 
-                 {
-                    this.state.homework.map((homework, i) => {
-                        return (
-                            <div key={ i }>
                                 
-                                <Link to={'homework/'+ homework._id }>{ homework.name }</Link>
                             </div>
+                            
                         )
                     })
                 }
-                </table>
+
+       
+     
+                
                 <div>
                     <button className="redButton" onClick={ this.toggleHwForm  }>Add new Homework</button>
                 </div><br/><br/>

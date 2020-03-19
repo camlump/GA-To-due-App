@@ -48,6 +48,15 @@ export default class Projects extends Component {
         })
     }
 
+    deleteProject = () =>{
+        const projectId = this.props.match.params.projectId;
+        axios.delete('/api/project/' + projectId).then(()=>{
+            this.setState({
+                redirectToProject: true
+            });
+        });
+    }
+
     componentDidMount(){
         this.getProjects();
     }
@@ -56,15 +65,59 @@ export default class Projects extends Component {
     render() {
         return (
             <div>
-                {
-                    this.state.projects.map((project, i )=>{
-                        return (
-                            <div key={i}>
-                                <Link to={'project/' + project._id }>{ project.name }</Link>
+                        <div>
+               {
+                     this.state.projects.map((project, i) => {
+                         return (
+                             
+                             <div key={ i }>
+                             <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">Homework</th>
+      <th scope="col">Name</th>
+      <th scope="col">Finish</th>
+    </tr>
+  </thead>
+                             
+  <tbody>
+    <tr>
+
+      <th scope="row">Due</th>
+      <td>
+        <Link to={'homework/'+ project._id }>{ project.name }</Link>
+
+      </td>
+      <td>
+          <button onClick={ this.deleteProject}>Done</button>
+      </td>
+    </tr>
+     
+  </tbody>
+</table>
+                                
+                                
                             </div>
+                            
                         )
                     })
                 }
+            </div>
+
+                    
+                    
+                    
+                    
+                    {/* {
+                        this.state.projects.map((project, i )=>{
+                            return (
+                                <div key={i}>
+                                    <Link to={'project/' + project._id }>{ project.name }</Link>
+                                </div>
+                            )
+                        })
+                    } */}
                 <div>
                     <button className="redButton" onClick={ this.toggleProjectForm }>Add new Project</button>
                 </div><br/><br/>
