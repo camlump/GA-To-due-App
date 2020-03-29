@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default class Projects extends Component {
     state = {
         projects: [],
-        didpresent: false,
+        didPresent: false,
         newProject: {
             name: '',
 
@@ -38,6 +38,13 @@ export default class Projects extends Component {
         this.setState({
             projectForm: newProjectForm
         });
+    }
+
+    togglePresent = () =>{
+        const present = !this.state.didPresent
+        this.setState({
+            didPresent: present
+        })
     }
     
     onSubmitProject = (event) => {
@@ -106,7 +113,7 @@ export default class Projects extends Component {
       <td>
       <div class="form-group">
   <label for="sel1"></label>
-  <select class="form-control" id="sel1">
+  <select onSelect class="form-control" id="sel1">
     <option>No</option>
     <option>yes</option>
     

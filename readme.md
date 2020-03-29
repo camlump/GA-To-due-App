@@ -1,6 +1,6 @@
 # General Assembly to-do App
 
-https://gadue.herokuapp.com/project
+https://gadue.herokuapp.com/
 
 Planning Board: https://trello.com/b/l6KyCWVb/ga-to-do-list
 
