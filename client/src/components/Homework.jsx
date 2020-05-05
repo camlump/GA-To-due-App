@@ -57,7 +57,8 @@ export default class Homework extends Component {
         const renderHomework = (homework, i) =>{
             return (
                 <tr key={i}>
-                    <td>{homework.name}</td>
+                   
+                    <td> <Link className="mappedTodos" to={'homework/'+ homework._id}>{homework.name}</Link></td>
                     <td>{homework.time}</td>
                     <td>{homework.todo}</td>
                 </tr>
@@ -81,7 +82,7 @@ export default class Homework extends Component {
   
 
                 {
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover">
                     <thead>
                      <tr>
                         <th scope="col">name</th>
