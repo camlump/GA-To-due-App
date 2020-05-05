@@ -195,3 +195,26 @@ button{
 h2{
   clear: left;
 }
+
+#homeContent{
+  margin-top: 40px;
+}
+
+#middleContent{
+  margin: 20px auto;
+  display: inline-block;
+  background: url('https://i.imgur.com/kr63htu.jpg');
+  
+}
+
+
+
+.media{
+  margin: 25px;
+  background-color: #dddddd;
+}
+
+.footer{
+  background: #1f1f2e;
+  color: white;
+}

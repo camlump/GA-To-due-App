@@ -1,8 +1,8 @@
 /* Step 1 import express
  *
  */
-const express = require('express')
 
+const express = require('express')
 /* Step 2
  *
  * Import the model files
@@ -25,7 +25,7 @@ const Deliverable = require('../models/DeliverablesModel.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const deliverableRouter = express.Router()
+const deliverableRouter = express.Router();
 
 
 

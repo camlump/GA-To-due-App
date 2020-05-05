@@ -13,6 +13,7 @@ import Jobtracker from './components/Jobtracker.jsx'
 import SingleJobTracker from './components/SingleJobTracker'
 import Meetup from './components/Meetup.jsx'
 import SingleMeetup from './components/SingleMeetup'
+import Footer from './components/Footer.jsx'
 
 import './App.css';
 
@@ -70,7 +71,9 @@ function App() {
 
           
         </Switch>
+        <Footer/>
       </Router>
+      
     </div>
   );
 }

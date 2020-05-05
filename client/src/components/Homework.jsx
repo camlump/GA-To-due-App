@@ -12,6 +12,8 @@ export default class Homework extends Component {
         hwForm: false
     }
 
+
+
     getHomeworks =()=>{
         axios.get('/api/homework').then((response)=>{
             const foundHomework = response.data;
@@ -51,12 +53,21 @@ export default class Homework extends Component {
         this.getHomeworks();
     }
     render() {
+
+        const renderHomework = (homework, i) =>{
+            return (
+                <tr key={i}>
+                    <td>{homework.name}</td>
+                    <td>{homework.time}</td>
+                    <td>{homework.todo}</td>
+                </tr>
+            )
+        }
        
         return (
             <div>
-        <div>
-            <button className="redButton" onClick={ this.toggleHwForm  }>Add new Homework</button>
-                </div><br/><br/>
+        
+            
                         {
                             this.state.hwForm ? <form onSubmit={ this.onSubmitHw }>
                                 <input type="text" name="name" onChange={this.changeInput } placeholder="Assingment Name"/><br/><br/>
@@ -66,65 +77,27 @@ export default class Homework extends Component {
                             </form> : null
                         }
 
-                    <div>
-                        {
-                                this.state.homework.map((homework, i) => {
-                                    return (
-                                        
-                                        <div key={ i }>
-                                        <table class="table table-striped table-dark">
+                 
+  
+
+                {
+                    <table class="table table-hover table-dark">
                     <thead>
-                        <tr>
-                        
-                        <th scope="col">Date</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Finish</th>
-                        </tr>
-                    </thead>
-                                        
-                        <tbody>
-                            <tr>
-
-                            <th scope="row">{ homework.time }</th>
-                            <td>
-                                <Link className="mappedTodos" to={'homework/'+ homework._id }>{ homework.name }</Link>
-
-                            </td>
-                            <td>
-                        
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>
-                        <label class="custom-control-label" for="defaultUnchecked"></label>
-                        </div>
-                            </td>
-                            
-                                                    
-                            </tr>
-                            
-                        </tbody>
-                        </table>
-                                            
-                                
-                 </div>
-                            
-                )
-            })
-        }
-        </div>
-{/* 
-               {
-                     this.state.homework.map((homework, i) => {
-                         return (
-                             
-                             <div key={ i }>
-                                <Link to={'homework/'+ homework._id }>{ homework.name }</Link>
-                             </div>
-                            
-                        )
-                    })
-                } */}
+                     <tr>
+                        <th scope="col">name</th>
+                       <th scope="col">Date</th>
+                       <th scope="col">Description</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                        {this.state.homework.map(renderHomework)}
+                  </tbody>
+                 </table>
+                     
+                    }
 
        
+<button className="redButton" onClick={ this.toggleHwForm  }>Add new Homework</button>
      
                 
                
