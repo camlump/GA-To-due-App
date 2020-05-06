@@ -55,12 +55,19 @@ export default class Deliverables extends Component {
         this.getDeliverables()
     }
     render() {
+        const renderDeliverables = (deliverable, i) =>{
+            return (
+                <tr key={i}>
+                    <td>{deliverable.name}</td>
+                     <td>{deliverable.time}</td>
+                    <td>{deliverable.todo}</td>
+                     {/* <td>{deliverable.isDone}</td> */}
+                </tr>
+            )
+        }
         return (
             <div>
-                <div>
-                    <button className="redButton" onClick={this.toggleDeliveForm}>Add new Deliverables task</button>
-                </div><br/><br/>
-                <div>
+                
                     {
                         this.state.deliverableForm ? <form onSubmit={this.onsubmitDeliveravble}>
                             <input type="text" name="name" onChange={this.changeInput } placeholder="Deliverable name"/><br/><br/>
@@ -69,58 +76,25 @@ export default class Deliverables extends Component {
                             <input className="submit" type="submit" value="Add"/>
                         </form> : null
                     }
-                        {
-                                this.state.deliverable.map((deliverable, i) => {
-                                    return (
-                                        
-                                        <div key={ i }>
-                                        <table class="table table-striped table-dark">
-            <thead>
-                <tr>
-                
-                <th scope="col">Date</th>
-                <th scope="col">Name</th>
-                <th scope="col">Reviewed</th>
-                <th scope="col">Finish</th>
-                </tr>
-            </thead>
-                                        
-            <tbody>
-                <tr>
-
-                <th scope="row">{ deliverable.time}</th>
-                <td>
-                    <Link className="mappedTodos" to={'deliverables/'+ deliverable._id }>{ deliverable.name }</Link>
-
-                </td>
-                <td>
-                <div class="form-group">
-                    <label for="sel1"></label>
-                    <select class="form-control" id="sel1">
-                        <option>no</option>
-                        <option>Yes</option>
-                        
-                    </select>
-                    </div>
-                </td>
-                <td>
-                <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>
-            <label class="custom-control-label" for="defaultUnchecked"></label>
-            </div>
-                </td>
-                </tr>
-                
-            </tbody>
-            </table>
-                                
-                                
-                 </div>
-                            
-                )
-            })
-        }
-        </div>
+                       
+                       {
+                           <table className="table">
+                               <thead>
+                                   <tr>
+                                       <th>Name</th>
+                                       <th>Date</th>
+                                       <th>Todo</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   {this.state.deliverable.map(renderDeliverables)}
+                               </tbody>
+                           </table>
+                       }
+        
+                <div>
+                    <button className="redButton" onClick={this.toggleDeliveForm}>Add new Deliverables task</button>
+                </div>
 
 
 

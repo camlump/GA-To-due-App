@@ -70,11 +70,19 @@ export default class Projects extends Component {
         
     
     render() {
+        const renderProjects = (project, i) => {
+            return (
+                <tr key={i}>
+                    <td> <Link className="mappedTodos" to={'project/'+ project._id }>{project.name}</Link></td>
+                    <td>{project.time}</td>
+                    <td>{project.todo}</td>
+                    {/* <td>{project.isDone}</td>
+                    <td>{project.didPresent}</td> */}
+                </tr>
+            )
+        }
         return (
             <div>
-            <div>
-                <button className="redButton" onClick={ this.toggleProjectForm }>Add new Project</button>
-            </div><br/><br/>
                 {
                 this.state.projectForm ? <form onSubmit={ this.onSubmitProject}>
                     <input type="text" name="name" onChange={this.changeInput} placeholder="Project Name"/> <br/> <br/>
@@ -85,34 +93,29 @@ export default class Projects extends Component {
                 
                 </form> : null
                 }
-                        <div>
-               {
-                     this.state.projects.map((project, i) => {
-                         return (
-                             
-                             <div key={ i }>
-                             <table class="table table-striped table-dark">
-  <thead>
-    <tr>
-      
-      <th scope="col">Date</th>
-      <th scope="col">Name</th>
-      <th scope="col">Presented</th>
-      <th scope="col">Finish</th>
-    </tr>
-  </thead>
-                             
-  <tbody>
-    <tr>
+             {
+                <table className="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.projects.map(renderProjects)}
+                    </tbody>
+                </table>
+             }
+<div>
+    <button className="redButton" onClick={ this.toggleProjectForm }>Add new Project</button>
+</div>
 
-    <th scope="row">{ project.time}</th>
-      <td>
-        <Link className="mappedTodos" to={'project/'+ project._id }>{ project.name }</Link>
-
-      </td>
-      <td>
+ 
+      {/* <td>
       <div class="form-group">
-  <label for="sel1"></label>
+      <label for="sel1"></label>
   <select onSelect class="form-control" id="sel1">
     <option>No</option>
     <option>yes</option>
@@ -120,39 +123,19 @@ export default class Projects extends Component {
   </select>
 </div>
 
-      </td>
-      <td>
+      </td> */}
+      {/* <td>
       <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>
             <label class="custom-control-label" for="defaultUnchecked"></label>
             </div>
-      </td>
-    </tr>
-     
-  </tbody>
-</table>
+      </td> */}
+   
+                       
                                 
-                                
-                            </div>
+                           
                             
-                        )
-                    })
-                }
-            </div>
-
-                    
-                    
-                    
-                    
-                    {/* {
-                        this.state.projects.map((project, i )=>{
-                            return (
-                                <div key={i}>
-                                    <Link to={'project/' + project._id }>{ project.name }</Link>
-                                </div>
-                            )
-                        })
-                    } */}
+               
             </div>
         )
     }
