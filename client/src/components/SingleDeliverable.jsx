@@ -41,7 +41,7 @@ export default class SingleDeliverable extends Component {
 
     deleteDeliverables = () =>{
         const deliverableId = this.props.match.params.deliverableId;
-        axios.delete('/api/deliverables' + deliverableId).then(()=>{
+        axios.delete('/api/deliverables/' + deliverableId).then(()=>{
             this.setState({
                 redirectToDeliverables: true
             })
@@ -73,7 +73,7 @@ export default class SingleDeliverable extends Component {
                     <input type="text" name="todo" value={ this.state.editDelive.todo } onChange={ this.changeInput} placeholder="To-Do"/><br/><br/>
                     <input className="submit" type="submit" value="Update"/>
                 </form>
-                <button className="submit" onClick={ this.deleteDeliverables}>Delete</button>
+                <button onClick={ this.deleteDeliverables}>Delete</button>
             </div>
         )
     }
