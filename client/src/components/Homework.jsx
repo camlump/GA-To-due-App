@@ -82,7 +82,7 @@ export default class Homework extends Component {
   
 
                 {
-                    <table class="table table-hover">
+                    <table class="table table-hover table-bordered">
                     <thead>
                      <tr>
                         <th scope="col">name</th>

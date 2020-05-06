@@ -61,11 +61,19 @@ export default class JobTracker extends Component {
     }
 
     render() {
+    const renderJobTracker = (jobtracker, i)=>{
+        return (
+            <tr key={i}>
+                <td><Link className="mappedTodos" to={'jobtracker/' + jobtracker._id}>{jobtracker.name}</Link></td>
+                <td>{jobtracker.time}</td>
+                <td>{jobtracker.todo}</td>
+
+            </tr>
+        )
+    }
+
         return (
             <div>
-        <div>
-            <button className="redbutton" onClick={ this.toggleJtForm }>Add new task</button>
-        </div>
                             {
                                 this.state.jobTrackerForm? <form onSubmit={ this.onSubmitJobTracker }>
                                     <input type="text" name="name" onChange={this.changeInput } placeholder="Assingment Name"/><br/><br/>
@@ -74,76 +82,32 @@ export default class JobTracker extends Component {
                                     <input className="submit" type="submit" value="Add"/>
                                 </form> : null
                             }
-                        <div>
+                        
                         {
-                                this.state.jobtracker.map((jobtracker, i) => {
-                                    return (
-                                        
-                                        <div key={ i }>
-                                        <table class="table table-striped table-dark">
-            <thead>
-                <tr>
-                
-                <th scope="col">Homework</th>
-                <th scope="col">Name</th>
-                <th scope="col">Status</th>
-                <th scope="col">Finish</th>
-                </tr>
-            </thead>
-                                        
-            <tbody>
-                <tr>
+                            <table className="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        <th>Descrption</th>
 
-                <th scope="row">{ jobtracker.time }</th>
-                <td>
-                    <Link className="mappedTodos" to={'jobtracker/'+ jobtracker._id }>{ jobtracker.name }</Link>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.state.jobtracker.map(renderJobTracker)}
+                                </tbody>
 
-                </td>
-                <td>
-                <div class="form-group">
-  <label for="sel1"></label>
-  <select class="form-control" id="sel1">
-    <option>Pinned</option>
-    <option>Applied</option>
-    <option>Interview</option>
-    <option>Technical</option>
-    <option>offered</option>
-  </select>
-</div>
-                </td>
-               
-                
-                <td>
-                <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>
-            <label class="custom-control-label" for="defaultUnchecked"></label>
-            </div>
-                </td>
-                </tr>
-                
-            </tbody>
-            </table>
-                                
-                                
-                 </div>
-                            
-                )
-            })
-        }
+                            </table>
+
+                        }
+        <div>
+            <button className="redbutton" onClick={ this.toggleJtForm }>Add new task</button>
         </div>
+                      
 
 
                 
-                {/* {
-                    this.state.JobTracker.map((JobTracker, i )=>{
-                        return(
-                            <div key={i}>
-                                <Link to={'jobtracker/' + JobTracker._id}>{ JobTracker.name }</Link>
-
-                            </div>
-                        )
-                    })
-                } */}
+          
                 
             </div>
         )
