@@ -58,7 +58,7 @@ export default class Deliverables extends Component {
         const renderDeliverables = (deliverable, i) =>{
             return (
                 <tr key={i}>
-                    <td><Link className="mappedTodos" to={'deliverable/'+ deliverable._id}>{deliverable.name}</Link></td>
+                    <td><Link className="mappedTodos" to={'deliverables/'+ deliverable._id}>{deliverable.name}</Link></td>
                      <td>{deliverable.time}</td>
                     <td>{deliverable.todo}</td>
                      {/* <td>{deliverable.isDone}</td> */}

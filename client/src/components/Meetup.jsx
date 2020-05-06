@@ -55,12 +55,19 @@ export default class Meetup extends Component {
         this.getMeetups()
     }
     render() {
+            const renderMeetups = (meetup, i) =>{ 
+              return (  <tr key={i}>
+                    <td><Link className="mappedTodos" to={'meetup/'+ meetup._id}>{meetup.name}</Link></td>
+                    <td>{meetup.time}</td>
+                    <td>{meetup.location}</td>
+
+                </tr>
+              )
+            }
+
         return (
             <div>
-                <div>
-                    <button className="redButton" onClick={ this.toggleMeetupForm}>Add Meetup</button>
-                </div><br/><br/>
-                   <div>
+                   
                        {
                            this.state.meetupForm ? <form onSubmit={ this.onSubmitMeetup }>
                                <input type="text" name="name" onChange={ this.changeInput } placeholder="name"/> <br/><br/>
@@ -69,60 +76,29 @@ export default class Meetup extends Component {
                                <input className="submit" type="submit" value="Add"/>
                            </form> : null
                        }
-                        {
-                                this.state.meetup.map((meetup, i) => {
-                                    return (
+
+                       {
+                            <table className="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>name</th>
+                                        <th>Date</th>
+                                        <th>Location</th>
                                         
-                                        <div key={ i }>
-                                        <table class="table table-striped table-dark">
-            <thead>
-                <tr>
-                
-                <th scope="col">Date</th>
-                <th scope="col">Name</th>
-                <th scope="col">Finish</th>
-                </tr>
-            </thead>
-                                        
-            <tbody>
-                <tr>
-
-                <th scope="row">{ meetup.time}</th>
-                <td>
-                    <Link className="mappedTodos" to={'meetup/'+ meetup._id }>{ meetup.name }</Link>
-
-                </td>
-                <td>
-                <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="defaultUnchecked"></input>
-            <label class="custom-control-label" for="defaultUnchecked"></label>
-            </div>
-                </td>
-                </tr>
-                
-            </tbody>
-            </table>
-                                
-                                
-                 </div>
-                            
-                )
-            })
-        }
-        </div>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.state.meetup.map(renderMeetups)}
+                                </tbody>
+                            </table>
+                       }
+                      
+                <div>
+                    <button className="redButton" onClick={ this.toggleMeetupForm}>Add Meetup</button>
+                </div>
+         
 
 
-
-
-                {/* {
-                    this.state.meetup.map((meetup, i)=>{
-                        return (
-                            <div key={i}>
-                                <Link to={'meetup/' + meetup._id }>{ meetup.name}</Link>
-                            </div>
-                        )
-                    })
-                } */}
 
 
                 
