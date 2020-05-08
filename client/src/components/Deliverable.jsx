@@ -61,6 +61,7 @@ export default class Deliverables extends Component {
                     <td><Link className="mappedTodos" to={'deliverables/'+ deliverable._id}>{deliverable.name}</Link></td>
                      <td>{deliverable.time}</td>
                     <td>{deliverable.todo}</td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></input> </td>
                      {/* <td>{deliverable.isDone}</td> */}
                 </tr>
             )
@@ -84,6 +85,7 @@ export default class Deliverables extends Component {
                                        <th>Name</th>
                                        <th>Date</th>
                                        <th>Todo</th>
+                                       <th>Status</th>
                                    </tr>
                                </thead>
                                <tbody>

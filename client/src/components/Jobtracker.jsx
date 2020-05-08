@@ -67,6 +67,7 @@ export default class JobTracker extends Component {
                 <td><Link className="mappedTodos" to={'jobtracker/' + jobtracker._id}>{jobtracker.name}</Link></td>
                 <td>{jobtracker.time}</td>
                 <td>{jobtracker.todo}</td>
+                <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></input> </td>
 
             </tr>
         )
@@ -90,6 +91,7 @@ export default class JobTracker extends Component {
                                         <th>Name</th>
                                         <th>Date</th>
                                         <th>Descrption</th>
+                                        <th>Status</th>
 
                                     </tr>
                                 </thead>

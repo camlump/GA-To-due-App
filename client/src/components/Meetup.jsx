@@ -60,6 +60,7 @@ export default class Meetup extends Component {
                     <td><Link className="mappedTodos" to={'meetup/'+ meetup._id}>{meetup.name}</Link></td>
                     <td>{meetup.time}</td>
                     <td>{meetup.location}</td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></input></td>
 
                 </tr>
               )
@@ -84,6 +85,7 @@ export default class Meetup extends Component {
                                         <th>name</th>
                                         <th>Date</th>
                                         <th>Location</th>
+                                        <th>Status</th>
                                         
                                     </tr>
                                 </thead>

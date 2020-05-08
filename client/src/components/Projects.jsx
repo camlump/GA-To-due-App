@@ -76,6 +76,7 @@ export default class Projects extends Component {
                     <td> <Link className="mappedTodos" to={'project/'+ project._id }>{project.name}</Link></td>
                     <td>{project.time}</td>
                     <td>{project.todo}</td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></input> </td>
                     {/* <td>{project.isDone}</td>
                     <td>{project.didPresent}</td> */}
                 </tr>
@@ -100,6 +101,7 @@ export default class Projects extends Component {
                         <th>Name</th>
                         <th>Date</th>
                         <th>Description</th>
+                        <th>Status</th>
                             
                         </tr>
                     </thead>

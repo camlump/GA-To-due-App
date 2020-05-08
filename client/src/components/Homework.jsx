@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
+
  
 export default class Homework extends Component {
     state = {
@@ -45,6 +47,7 @@ export default class Homework extends Component {
         })
     }
 
+
    
    
 
@@ -61,6 +64,7 @@ export default class Homework extends Component {
                     <td> <Link className="mappedTodos" to={'homework/'+ homework._id}>{homework.name}</Link></td>
                     <td>{homework.time}</td>
                     <td>{homework.todo}</td>
+                    <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></input> </td>
                 </tr>
             )
         }
@@ -88,6 +92,7 @@ export default class Homework extends Component {
                         <th scope="col">name</th>
                        <th scope="col">Date</th>
                        <th scope="col">Description</th>
+                       <th scope="col">Status</th>
                      </tr>
                    </thead>
                    <tbody>
@@ -101,7 +106,7 @@ export default class Homework extends Component {
 <button className="redButton" onClick={ this.toggleHwForm  }>Add new Homework</button>
      
                 
-               
+               {/* <Footer /> */}
             </div>
         )
     }
