@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
  * This will need to change for every new project you create.
  *
  */
-const connectionString = process.env.MONGODB_URI || "mongodb+srv://heroku_pbb3c6f6:Akimbo2020@cluster-pbb3c6f6.5hxov.mongodb.net/gadue?retryWrites=true&w=majority";
+const connectionString = process.env.MONGODB_URI || "mongodb+srv://heroku_pbb3c6f6:Coldwarcam@cluster-pbb3c6f6.5hxov.mongodb.net/gadue?retryWrites=true&w=majority";
 
 
 /* Step 2
