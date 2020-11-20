@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
  * This will need to change for every new project you create.
  *
  */
-const connectionString = process.env.MONGODB_URI || "mongodb+srv://heroku_pbb3c6f6:AKIMBO2020@cluster-pbb3c6f6.5hxov.mongodb.net/heroku_pbb3c6f6?retryWrites=true&w=majority";
+const connectionString = process.env.MONGODB_URI || "mongodb://localhost/ga-app";
 
 
 /* Step 2
