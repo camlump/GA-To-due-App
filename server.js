@@ -10,6 +10,7 @@
  */
 const express = require('express')
 const app = express()
+const path = require('path')
 
 /* Step 2
  * 
@@ -67,17 +68,28 @@ app.use('/api/meetup', meetupRouter)
  * add catch all route to serve up the built react app for any request not made to our
  * /api/... routes.
  */
-app.get('/*', (req, res) => {
-    res.sendFile(`${__dirname}/client/build/index.html`)
-})
 
+
+
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '/client/build')));
+
+    app.get('/*', (req, res) => {
+        res.sendFile(`${__dirname}/client/build/index.html`)
+    })
+    
+} else {
+    app.get('/', (req, res)=>{
+        res.send("api running")
+    })
+}
 /* Step 6
  *
  * Set the port the server is to run on
  *
  * NOTE: keep these lines at the bottom of the file 
  */
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT;
 
 /* Step 7
  *
