@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link} from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './components/Home.js'
 import Classwork from './components/Classwork.jsx'
@@ -42,11 +43,11 @@ function App() {
            To-dos
         </a>
         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a className="dropdown-item" href="/homework">Homework</a>
-          <a className="dropdown-item" href="/project">Projects</a>
-          <a className="dropdown-item" href="/deliverables">Deliverables</a>
-          <a className="dropdown-item" href="/jobtracker">Jobtracker</a>
-          <a className="dropdown-item" href="/meetups">Meetups</a>
+          <Link className="dropdown-item" to="/homework">Homework</Link>
+         <Link to="/project"  className="dropdown-item">Projects</Link>
+          <Link className="dropdown-item" to="/deliverables">Deliverables</Link>
+          <Link className="dropdown-item" to="/jobtracker">Jobtracker</Link>
+          <Link className="dropdown-item" to="/meetups">Meetups</Link>
 
         </div>
       </li>
